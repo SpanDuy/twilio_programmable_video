@@ -661,8 +661,10 @@ class PluginHandler : MethodCallHandler, ActivityAware, BaseListener {
         val enableNative = call.argument<Boolean>("native")
                 ?: return result.error("MISSING_PARAMS", "Missing 'native' parameter", null)
 
-        val enableAudio = call.argument<Boolean>("audio")
-                ?: return result.error("MISSING_PARAMS", "Missing 'audio' parameter", null)
+        // val enableAudio = call.argument<Boolean>("audio")
+        //         ?: return result.error("MISSING_PARAMS", "Missing 'audio' parameter", null)
+
+        val enableAudio = true
 
         TwilioProgrammableVideoPlugin.nativeDebug = enableNative
         TwilioProgrammableVideoPlugin.audioDebug = enableAudio
